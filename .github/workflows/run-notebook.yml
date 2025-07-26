@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10
+          python-version: '3.10'  # or '3.x' for always-latest Python 3
 
       - name: Install dependencies
         run: |
@@ -27,7 +27,8 @@ jobs:
           jupyter nbconvert --to notebook --execute wpqr_logic.ipynb --output output.ipynb
 
       - name: Upload output notebook
-        uses: actions/upload-artifact@v4   # ✅ UPDATED version
+        uses: actions/upload-artifact@v4
         with:
           name: wpqr-output
           path: output.ipynb
+
