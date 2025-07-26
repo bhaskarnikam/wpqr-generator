@@ -24,10 +24,10 @@ jobs:
 
       - name: Run notebook
         run: |
-          jupyter nbconvert --to notebook --execute "wpqr_logic (1).ipynb" --output output.ipynb
+          jupyter nbconvert --to notebook --execute wpqr_logic.ipynb --output output.ipynb
 
       - name: Upload output notebook
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4   # ✅ UPDATED version
         with:
           name: wpqr-output
           path: output.ipynb
